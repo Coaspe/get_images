@@ -2,8 +2,7 @@ import json
 import urllib.request
 from haralyzer import HarParser
 import os
-
-PROFILE_IMAGE = ''
+import constants
 
 harname = ''
 folder_name = ''
@@ -18,8 +17,10 @@ if data:
     for entry in entries:
         if entry['_resourceType'] == 'image':
             query = entry['request']['queryString']
-            if len(query) > 3 and query[0]['value'] != PROFILE_IMAGE and query[0]['name'] == 'stp':
+            if len(query) > 3 and query[0]['value'] != constants.PROFILE_IMAGE and query[0]['name'] == 'stp':
+                # Get request url
                 url = entry['request']['url']
+                # Unique name
                 name = query[3]['value']
                 if not os.path.exists(folder_name):
                     os.makedirs(folder_name)
