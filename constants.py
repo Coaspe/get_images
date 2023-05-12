@@ -1,0 +1,1 @@
+PROFILE_IMAGE = 'dst-jpg_s150x150'
