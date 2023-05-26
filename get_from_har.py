@@ -25,9 +25,9 @@ for path in os.listdir('./harfiles'):
 
         harname = path[:-4]
         folder_name = f'images/{harname}'
-
-        with open(f'./harfiles/{harname}.har', 'r') as f:
-            har_parser = HarParser(json.loads(f.read()))
+        
+        f = open(f'./harfiles/{harname}.har', 'r', encoding="UTF-8")
+        har_parser = HarParser(json.loads(f.read()))
 
         data = har_parser.har_data
 
