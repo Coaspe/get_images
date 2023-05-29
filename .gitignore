@@ -1,0 +1,4 @@
+images
+harfiles
+*.DS_store
+__pycache__/
